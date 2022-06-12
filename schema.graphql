@@ -7,4 +7,5 @@ type Product {
   id: ID!
   name: String!
   description: String!
+  price: Int! @deprecated(reason: "all prices will come from an external source")
 }
