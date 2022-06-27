@@ -1,0 +1,11 @@
+type Query {
+  productTwo(id: ID!): ProductTwo!
+  productsTwo: [ProductTwo!]!
+}
+
+type ProductTwo {
+  id: ID!
+  name: String!
+  description: String!
+  price: Int!
+}
