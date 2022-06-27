@@ -13,4 +13,15 @@ jobs:
 
       - uses: kamilkisiela/graphql-inspector@master
         with:
+          name: "Check schema product"
           schema: "master:schema.graphql"
+
+      - uses: kamilkisiela/graphql-inspector@master
+        with:
+          name: "Check product one"
+          schema: "master:schema/one.graphql"
+
+      - uses: kamilkisiela/graphql-inspector@master
+        with:
+          name: "Check product two"
+          schema: "master:schema/two.graphql"
