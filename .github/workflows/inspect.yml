@@ -5,6 +5,7 @@ on: [push]
 jobs:
   test:
     name: Check Schema
+    continue-on-error: true
     runs-on: ubuntu-latest
 
     steps:
