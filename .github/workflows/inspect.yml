@@ -11,6 +11,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - id: files
+        uses: jitterbit/get-changed-files@v1
+      - run: |
+          for changed_file in ${{ steps.files.outputs.all }}; do
+      - uses: kamilkisiela/graphql-inspector@master
+        continue-on-error: true
+        with:
+          name: "Check product one"
+          schema: "master:schema/" + changed_file
+
+          done
+          
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - uses: kamilkisiela/graphql-inspector@master
         continue-on-error: true
