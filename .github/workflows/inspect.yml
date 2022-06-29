@@ -13,18 +13,18 @@ jobs:
 
       - uses: kamilkisiela/graphql-inspector@master
         with:
+          if: always()
           name: "Check schema product"
           schema: "master:schema.graphql"
-          fail-on-breaking: false
 
       - uses: kamilkisiela/graphql-inspector@master
         with:
+          if: always()
           name: "Check product one"
           schema: "master:schema/one.graphql"
-          fail-on-breaking: false
 
       - uses: kamilkisiela/graphql-inspector@master
         with:
+          if: always()
           name: "Check product two"
           schema: "master:schema/two.graphql"
-          fail-on-breaking: false
