@@ -5,23 +5,41 @@ on: [push]
 jobs:
   test:
     name: Check Schema
+    continue-on-error: true
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - id: files
+        uses: jitterbit/get-changed-files@v1
+      - run: |
+          for changed_file in ${{ steps.files.outputs.all }}; do
+      - uses: kamilkisiela/graphql-inspector@master
+        continue-on-error: true
+        with:
+          name: "Check product one"
+          schema: "master:schema/" + changed_file
+
+          done
+          
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - uses: kamilkisiela/graphql-inspector@master
+        continue-on-error: true
         with:
           name: "Check schema product"
           schema: "master:schema.graphql"
 
       - uses: kamilkisiela/graphql-inspector@master
+        continue-on-error: true
         with:
           name: "Check product one"
           schema: "master:schema/one.graphql"
 
       - uses: kamilkisiela/graphql-inspector@master
+        continue-on-error: true
         with:
           name: "Check product two"
           schema: "master:schema/two.graphql"
