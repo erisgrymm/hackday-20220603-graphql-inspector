@@ -13,19 +13,19 @@ jobs:
         uses: actions/checkout@v2
 
       - uses: kamilkisiela/graphql-inspector@master
+        continue-on-error: true
         with:
-          if: always()
           name: "Check schema product"
           schema: "master:schema.graphql"
 
       - uses: kamilkisiela/graphql-inspector@master
+        continue-on-error: true
         with:
-          if: always()
           name: "Check product one"
           schema: "master:schema/one.graphql"
 
       - uses: kamilkisiela/graphql-inspector@master
+        continue-on-error: true
         with:
-          if: always()
           name: "Check product two"
           schema: "master:schema/two.graphql"
