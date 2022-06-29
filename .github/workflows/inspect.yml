@@ -15,13 +15,16 @@ jobs:
         with:
           name: "Check schema product"
           schema: "master:schema.graphql"
+          fail-on-breaking: false
 
       - uses: kamilkisiela/graphql-inspector@master
         with:
           name: "Check product one"
           schema: "master:schema/one.graphql"
+          fail-on-breaking: false
 
       - uses: kamilkisiela/graphql-inspector@master
         with:
           name: "Check product two"
           schema: "master:schema/two.graphql"
+          fail-on-breaking: false
